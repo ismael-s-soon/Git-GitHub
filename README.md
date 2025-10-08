@@ -36,4 +36,44 @@ Pendant le pull request, j’ai eu un petit problème car la branche principale 
 'git pull origin main' après ça, j’ai refait la commande du pull request et tout a bien fonctionné.
 
 #### Exercice 3 : Gestion des conflits lors du fusionnement
-J’ai d’abord créé un nouveau dépôt GitHub appelé git-learning-3 avec la commande : 'gh repo create git-learning-3 --public' ensuite, j’ai cloné le dépôt localement : 'gh repo clone ismael-s-soon/git-learning-3' 'cd git-learning-3' sur la branche main, j’ai créé un fichier notes.txt avec cette ligne : 'echo "Ligne écrite depuis la branche main" > notes.txt' 'git add notes.txt' 'git commit -m "ajout de la ligne depuis main"' '
+J’ai d’abord créé un nouveau dépôt GitHub appelé git-learning-3 avec la commande : 'gh repo create git-learning-3 --public' ensuite, j’ai cloné le dépôt localement : 'gh repo clone ismael-s-soon/git-learning-3' 'cd git-learning-3' sur la branche main, j’ai créé un fichier notes.txt avec cette ligne : 'echo "Ligne écrite depuis la branche main" > notes.txt' 'git add notes.txt' 'git commit -m "ajout de la ligne depuis main"' 'git push' j’ai ensuite créé une nouvelle branche appelée conflict-test : 'git checkout -b conflict-test'
+Depuis cette branche, j’ai modifié le fichier notes.txt :'echo "Ligne écrite depuis la branche conflict-test" > notes.txt' 'git add notes.txt' 'git commit -m "modification depuis conflict-test"' 'git push -u origin conflict-test' je suis revenu sur la branche main : 'git checkout main' et j’ai modifié à nouveau notes.txt : 'echo "Ligne écrite depuis la branche principale pour la seconde fois" > notes.txt' 'git add notes.txt' 'git commit -m "modification sur main pour la seconde fois"' 'git push' lorsque j’ai essayé de fusionner les deux branches : 'git merge conflict-test' le terminal a affiché une erreur de conflit, car les deux branches avaient modifié la même ligne du fichier notes.txt. pour ressoudre c erreur j’ai ouvert le fichier notes.txt dans VS Code avec la commande :'code notes.txt'
+Le fichier contenait des balises de conflit comme : <<<<<<< HEAD
+Ligne écrite depuis la branche principale pour la seconde fois
+=======
+Ligne écrite depuis la branche conflict-test
+>>>>>>> conflict-test
+j'ai garder les deux lignes comme la demmander l'ennoncé et j’ai sauvegardé le fichier ainsi : Ligne écrite depuis la branche principale pour la seconde fois  
+Ligne écrite depuis la branche conflict-test
+Ensuite, j’ai fait : 'git add notes.txt' 'git commit -m "résolution du conflit en gardant les deux lignes"' 'git push'
+Enfin, j’ai vérifié sur GitHub et j’ai constaté que le fichier notes.txt contenait bien les deux phrases.
+
+**Expérience acquise**
+
+J’ai appris comment surviennent les conflits lors d’un merge.
+
+J’ai appris à résoudre un conflit manuellement dans VS Code.
+
+**Difficulté rencontrée**
+
+La principale difficulté était le message d’erreur du merge, que je ne comprenais pas au début.
+J’ai compris ensuite qu’il fallait ouvrir le fichier concerné, lire les différences, puis choisir manuellement les lignes à garder via ennoncé.
+
+##### Conclusion générale
+Ces trois exercices m’ont permis de comprendre et de pratiquer en profondeur Git, GitHub CLI et le GitHub :
+
+  Connexion et configuration du terminal avec GitHub.
+
+  Création et clonage de dépôts.
+
+  Création de branches et Pull Requests.
+
+  Gestion des commits et push pour suivre l’historique.
+
+  Résolution des conflits lors de la fusion de branches.
+
+Cette expérience m’a montré comment travailler même en utilisant uniquement le terminal.
+
+
+
+
