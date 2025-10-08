@@ -34,3 +34,6 @@ J’ai appris à fusionner une branche dans la branche principale (main).
 
 Pendant le pull request, j’ai eu un petit problème car la branche principale main n’était pas encore reconnue sur mon dépôt local. Pour corriger cela, j’ai simplement mis à jour la branche principale avec :'git checkout main'
 'git pull origin main' après ça, j’ai refait la commande du pull request et tout a bien fonctionné.
+
+#### Exercice 3 : Gestion des conflits lors du fusionnement
+J’ai d’abord créé un nouveau dépôt GitHub appelé git-learning-3 avec la commande : 'gh repo create git-learning-3 --public' ensuite, j’ai cloné le dépôt localement : 'gh repo clone ismael-s-soon/git-learning-3' 'cd git-learning-3' sur la branche main, j’ai créé un fichier notes.txt avec cette ligne : 'echo "Ligne écrite depuis la branche main" > notes.txt' 'git add notes.txt' 'git commit -m "ajout de la ligne depuis main"' '
