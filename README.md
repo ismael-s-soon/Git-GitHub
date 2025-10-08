@@ -40,8 +40,7 @@ J’ai d’abord créé un nouveau dépôt GitHub appelé git-learning-3 avec la
 Depuis cette branche, j’ai modifié le fichier notes.txt :'echo "Ligne écrite depuis la branche conflict-test" > notes.txt' 'git add notes.txt' 'git commit -m "modification depuis conflict-test"' 'git push -u origin conflict-test' je suis revenu sur la branche main : 'git checkout main' et j’ai modifié à nouveau notes.txt : 'echo "Ligne écrite depuis la branche principale pour la seconde fois" > notes.txt' 'git add notes.txt' 'git commit -m "modification sur main pour la seconde fois"' 'git push' lorsque j’ai essayé de fusionner les deux branches : 'git merge conflict-test' le terminal a affiché une erreur de conflit, car les deux branches avaient modifié la même ligne du fichier notes.txt. pour ressoudre c erreur j’ai ouvert le fichier notes.txt dans VS Code avec la commande :'code notes.txt'
 Le fichier contenait des balises de conflit comme : <<<<<<< HEAD
 Ligne écrite depuis la branche principale pour la seconde fois
-Ligne écrite depuis la branche conflict-test
->>>>>>> conflict-test
+Ligne écrite depuis la branche conflict-test >>>>>>> 
 j'ai garder les deux lignes comme la demmander l'ennoncé et j’ai sauvegardé le fichier ainsi : Ligne écrite depuis la branche principale pour la seconde fois  
 Ligne écrite depuis la branche conflict-test
 Ensuite, j’ai fait : 'git add notes.txt' 'git commit -m "résolution du conflit en gardant les deux lignes"' 'git push'
